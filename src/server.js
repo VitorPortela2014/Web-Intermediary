@@ -10,7 +10,9 @@ import cors from "cors"
 import arquivoTesteController from "./controllers/arquivoTesteController.js";
 import { connectDatabase } from "./config/database.js";
 import productRouter from "./routes/productRouter.js";
+import musicaRouter from "./routes/MusicaRouter.js";
 import userRouter from "./routes/userRouter.js";
+import pokemomRouter from "./controllers/PokemonRouter.js";
 
 // Procurando arquivos
 const __filename = fileURLToPath(import.meta.url);
@@ -33,8 +35,10 @@ app.use(express.static(join(__dirname, "public")));
 
 // Definindo rotas
 app.use("/arquivoTeste", arquivoTesteController.initial);
-app.use("/products", productRouter)
-app.use("/auth",userRouter)
+app.use("/products", productRouter);
+app.use("/auth",userRouter);
+app.use("/musicas",musicaRouter);
+app.use("/pokemons", pokemomRouter)
 
 
 // Função principal para iniciar o servidor
