@@ -9,7 +9,7 @@ export default class PokemonController {
             const pokemons = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0");
             return res.status(200).json(pokemons.data);
         } catch (error) {
-            return res.status(500).json({ message: "Internal Server Error" });
+            return res.status(500).json({ message: "Internal Server Error"});
         }
     }
     // Criando função de criar pokemons
